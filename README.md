@@ -1,4 +1,7 @@
 # VerusMediaSDK
+##### Requirements:
+
+* iOS 12.1
 
 1. [ Installation ](#ins)
 2. [ How to get Video Ads. ](#video)
@@ -7,9 +10,7 @@
 
 <a name="ins"></a>
 ## Installation
-
-We use CocoaPods as a dependency manager, our pod is located in a private repository and you can integrate it to your project like this:
-
+•  We use CocoaPods as a dependency manager, our pod is located in a private repository and you can integrate it to your project like this:
 ```
 #Podfile example
 use_frameworks!
@@ -21,25 +22,25 @@ target 'YourApp' do
     pod 'VerusMediaSDK'
 end
 ```
-In every class that you're going to use our SDK you need to import it like this:
 
+•  In every class that you're going to use our SDK you need to import it like this:
 ```swift
 import VerusMediaSDK
 ```
-If you want to show VeriView Video Ads, you need to add Camera Privacy settings to your plist: 
+
+•  If you want to show VeriView™ Video Ads, you need to add Camera Privacy settings to your plist: 
 ```
 <key>NSCameraUsageDescription</key>
 	<string>Watch the entire ad to earn rewards</string>
 ```
 <a name="video"></a>
 ### How to get Video Ads
-For getting video ads you need to send your placementId and a verified flag, the last will determine wether we show a VeriView Video Ad or a regular Video Ad.
+To get a video ad you need to send your placementId and a verified flag, the last will determine wether we show a VeriView™ Video Ad or a regular Video Ad.
 
-You also need to conform to `VMVideoAdDelegate`, to get an status when the Ad finishes. The status types are:
+You also need to conform to `VMVideoAdDelegate`. It has a finished method that will be called with a `VMVideoAdStatus` when the Ad finishes.
+The `VMVideoAdStatus` enumeration types are:
 
 `COMPLETED`, `COMPLETED_VERIFIED`, `AD_ERROR_RS` and `NO_INTERNET`
-
-Which are in `VMVideoAdStatus` enum.
 
 Here is an example on how to get a Video Ad from a ViewController:
 
@@ -50,7 +51,7 @@ self.present(view!, animated: true)
 ```
 <a name="native"></a>
 ### How to get Native Ads
-For getting native ads you need to send your placementId as a parameter when instance a `VMNativeAd`.
+To get native ads you need to send your placementId as a parameter when instance a `VMNativeAd`.
 
 You also need to conform to `VMNativeAdDelegate`, to return the UI elements where the ad is going to render, such as: **Title**, **Description**, **Image** and **Call to Action**.
 
@@ -95,7 +96,7 @@ class ViewController: UIViewController, VMNativeAdDelegate {
 ```
 <a name="banner"></a>
 ### How to get Banner Ads
-For getting Banner Ads you need your placementId and your app bundleId.
+To get a banner ad you need your placementId and your app bundleId.
 
 You need to conform to `VMBannerAdViewDelegate` which will tell you when the Banner loads and when it fails to load.
 
