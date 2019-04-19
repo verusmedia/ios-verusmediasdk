@@ -35,7 +35,7 @@ import VerusMediaSDK
 ```
 <a name="video"></a>
 ### How to get Video Ads
-To get a video ad you need to send your placementId and a verified flag, the last will determine wether we show a VeriView™ Video Ad or a regular Video Ad.
+To get a video ad you need to send your placementId, and a verified flag. The verified flag is used determine whether we show a VeriView™ Video Ad or a regular Video Ad.
 
 You also need to conform to `VMVideoAdDelegate`. It has a finished method that will be called with a `VMVideoAdStatus` when the Ad finishes.
 The `VMVideoAdStatus` enumeration types are:
