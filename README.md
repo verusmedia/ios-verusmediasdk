@@ -13,13 +13,13 @@
 •  We use CocoaPods as a dependency manager, our pod is located in a private repository and you can integrate it to your project like this:
 ```
 #Podfile example
-use_frameworks!
 
-source 'https://gitlab.com/jinglz/apps/ios-cocoapods-specs.git'
+source 'https://github.com/verusmedia/ios-podspecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'YourApp' do
-    pod 'VerusMediaSDK'
+    use_frameworks!
+    pod 'VerusMediaSDK', '0.1.0-beta.1'
 end
 ```
 
